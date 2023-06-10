@@ -1,22 +1,28 @@
-<style>
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
   float: left;
-  width: 400px;
+  width: 33.33%;
+  padding: 5px;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.row {
+  display: flex;
 }
 
-div.gallery img {
-  width: 100%;
-  height: auto;
+.column {
+  flex: 33.33%;
+  padding: 5px;
 }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
 }
-</style>
